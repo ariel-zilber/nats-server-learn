@@ -1,0 +1,1 @@
+{"Created":"2022-11-18T21:31:51.904975299Z","Name":"$MQTT_rmsgs_4ErQeQor","durable_name":"$MQTT_rmsgs_4ErQeQor","deliver_policy":"all","ack_policy":"none","max_deliver":-1,"filter_subject":"$MQTT.rmsgs","replay_policy":"instant","deliver_subject":"$MQTT.sub.3rkW6F1kUA7lMbyu6XHGHr","num_replicas":0}
