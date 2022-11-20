@@ -1872,11 +1872,15 @@ func tierName(cfg *StreamConfig) string {
 }
 
 func isSameTier(cfgA, cfgB *StreamConfig) bool {
+	fmt.Println("[isSameTier]", "jetstream")
+
 	// TODO (mh) this is where we could select based off a placement tag as well "qos:tier"
 	return cfgA.Replicas == cfgB.Replicas
 }
 
 func (jsa *jsAccount) jetStreamAndClustered() (*jetStream, bool) {
+	fmt.Println("[jetStreamAndClustered]", "jetstream")
+
 	jsa.mu.RLock()
 	js := jsa.js
 	jsa.mu.RUnlock()
@@ -1885,6 +1889,8 @@ func (jsa *jsAccount) jetStreamAndClustered() (*jetStream, bool) {
 
 // jsa.usageMu read lock should be held.
 func (jsa *jsAccount) selectLimits(cfg *StreamConfig) (JetStreamAccountLimits, string, bool) {
+	fmt.Println("[selectLimits]", "jetstream")
+
 	if selectedLimits, ok := jsa.limits[_EMPTY_]; ok {
 		return selectedLimits, _EMPTY_, true
 	}
