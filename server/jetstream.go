@@ -1897,6 +1897,8 @@ func (jsa *jsAccount) selectLimits(cfg *StreamConfig) (JetStreamAccountLimits, s
 
 // Lock should be held.
 func (jsa *jsAccount) countStreams(tier string, cfg *StreamConfig) int {
+	fmt.Println("[countStreams]", "jetstream")
+
 	streams := len(jsa.streams)
 	if tier != _EMPTY_ {
 		streams = 0
@@ -1911,6 +1913,7 @@ func (jsa *jsAccount) countStreams(tier string, cfg *StreamConfig) int {
 
 // jsa.usageMu read lock (at least) should be held.
 func (jsa *jsAccount) storageTotals() (uint64, uint64) {
+	fmt.Println("[storageTotals]", "jetstream")
 	mem := uint64(0)
 	store := uint64(0)
 	for _, sa := range jsa.usage {
